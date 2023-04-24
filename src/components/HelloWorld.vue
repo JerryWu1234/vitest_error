@@ -2,18 +2,19 @@
 import SlotName from './slotname.vue'
 import {NodeLink} from '../node.ts'
 import {h} from 'vue'
-const ss = ( ) => {}
-const node = new NodeLink({
-  x: 0,
-  y: 1,
-  value: h('div', {class: 'node'},1),
-  direction: ['next']
+const props = defineProps({
+  modelValue: {
+    type: Object as () => NodeLink,
+    required: true,
+  },
 })
+const ss = ( ) => {}
+
 
 </script>
 
 <template>
-  <SlotName :nodelink="node" :clickFunc="ss">
+  <SlotName :nodelink="props.modelValue" :clickFunc="ss">
     232323
   </Slotname>
 </template>

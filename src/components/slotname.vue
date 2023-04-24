@@ -3,6 +3,10 @@ import { computed } from 'vue'
 import type { Direction, NodeLink } from '../../core'
 
 const props = defineProps({
+  modelValue: {
+    type: Object as () => NodeLink,
+    required: true,
+  },
   nodelink: {
     type: Object as () => NodeLink,
     required: true,
